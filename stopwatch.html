@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Javascript Stop Watch </title>
+	
+	<style text="text/css">
+	#stopWatch {
+	width: 280px;
+	height: auto;
+	text-align: center;
+	display: block;
+	padding: 5px;
+	margin: 0 auto;
+	}
+	
+	#timer, .fulltime {
+		width: auto;
+		height: auto;
+		padding: 10px;
+		display: block;
+		border: 1px solid #eee;
+		text-align: center;
+		box-shadow: 0 0 5px #ccc;
+		background: #fbfbf0;
+		color: darkblue;
+		border-bottom:4px solid darkgrey;
+	}
+	
+	
+	
+	.fulltime { display: none; }
+	</style>
+	
+	<script src="startwatch.js" type="text/javascript"></script>
+	<script src="stopwatch.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+			
+		// initialize your variables outside the function 
+		var count = 0;
+		var clearTime, seconds = 0, minutes = 0, hours = 0;
+		
+		var check = 0, clearState;
+		
+		var secs, mins, gethours ;
+		
+		function startWatch( ) {
+			
+			/* check if seconds is equal to 60 and add a +1 to minutes
+			* 	set seconds to 0 */
+			if ( seconds === 60 ) {
+				seconds = 0;
+				minutes = minutes + 1;
+			}
+				/* you use the javascript tenary operator to format how the 
+				*  minutes should look and add 0 to minutes if less than 10 */
+			
+				mins = ( minutes < 10 ) ?	
+					( '0' + minutes + ': ' ) : ( minutes + ': ' );
+			
+			
+			/* check if minutes is equal to 60 and add a +1 to hours
+			* 	set minutes to 0 */
+			if ( minutes === 60 ) {
+				minutes = 0;
+				hours = hours + 1;
+			}
+				/* you use the javascript tenary operator to format how the 
+				*  hours should look and add 0 to hours if less than 10 */
+					
+				gethours = ( hours < 10 ) ?	
+					( '0' + hours + ': ' ) : ( hours + ': ' );
+			
+				 secs = ( seconds < 10 ) ?	
+					( '0' + seconds ) : ( seconds );
+			
+			
+			// display the stopwatch
+			var x = document.getElementById("timer");
+			x.innerHTML = 'Time:  ' + gethours + mins + secs;
+			
+			// increment the seconds by +1 to keep counting
+			seconds++;
+			
+			// call the setTimeout( ) to keep the stop watch alive !
+			clearTime = setTimeout( "startWatch( )", 1000 );
+			
+		} // startWatch( )
+		
+		
+		//start the stop watch
+
+		function startTime( e ) {
+		
+			if ( seconds === 0 ) {
+
+			 	var fulltime = document.getElementById( "fulltime" );
+				fulltime.style.display = "none";  // hide fulltime
+				
+				this.style.display = "none";
+				document.getElementById("play").style.display = "none";
+
+				
+				startWatch( );
+			}
+			
+		}	// startTime( ) 
+		
+				
+		 //play the time
+		function playTime( e ) {
+					
+			if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) {
+				
+				clearTimeout( clearTime );
+				setTimeout( "startWatch( )", 1000);
+				 
+				 this.style.display = "none";
+				 document.getElementById("pause").style.display = "inline-block";
+
+			}
+		} //playTime( )
+				
+			
+		 //pause the time
+		function pauseTime( ) {
+		
+			if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) {
+				
+				clearTimeout( clearTime );
+				
+				this.style.display = "none";
+				document.getElementById("play").style.display = "inline-block";
+
+				
+			}
+		} //pauseTime( )
+				
+			
+				
+		//stop the time
+		function stopTime( ) {
+		
+			if ( seconds !== 0 ) {
+			
+			 	var fulltime = document.getElementById( "fulltime" );
+				fulltime.style.display = "block";  // show fulltime
+				fulltime.innerHTML = 'Fulltime:  ' + gethours + mins + secs;
+					
+				seconds = 0;
+				minutes = 0;
+				hours = 0;
+				
+				secs =  '0' + seconds;
+				mins = '0' + minutes + ': ';
+				gethours = '0' + hours + ': ';
+					
+				// display the stopwatch after it's been stopped
+				var x = document.getElementById("timer");
+				x.innerHTML = gethours + mins + secs;
+					
+					 document.getElementById("start").style.display = "inline-block";
+					 document.getElementById("stop").style.display = "inline-block";
+					 document.getElementById("play").style.display = "inline-block";
+
+				clearTimeout( clearTime );
+			}
+		}
+
+
+		// execute the stop watch with click event		
+		
+		window.addEventListener( 'load', function ( ) {
+			
+			document.getElementById("start").addEventListener('click', startTime );
+			
+			 document.getElementById("stop").addEventListener('click', stopTime );
+			
+			document.getElementById("play").addEventListener('click', playTime );
+			
+			document.getElementById("pause").addEventListener('click', pauseTime );
+		
+			// timeState();
+		});
+
+		// ********** stopTime end
+	</script>
+	
+</head>
+
+<body>
+
+	<section id="stopWatch">
+		<p id="timer">Time: 00:00:00</p>
+		
+		<button id="start">Start</button>
+		<button id="stop">Stop</button>
+		 <button id="play">Play</button>
+		 <button id="pause">Pause</button>
+		
+		<p  class="fulltime" id="fulltime"></p>
+	</section>
+	
+	<p  id="check"></p>
+	
+</body>
+</html>
