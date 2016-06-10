@@ -90,9 +90,9 @@
 		
 		//start the stop watch
 
-		function startTime( e ) {
+		function startTime( ) {
 		
-  e.preventDefault( );
+ // e.preventDefault( );
 
 			if ( seconds === 0 ) {
 
@@ -112,8 +112,8 @@
 		
 				
 		 //play the time
-		function playTime( e ) {
-			 e.preventDefault( );
+		function playTime( ) {
+			 //e.preventDefault( );
 
 			if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) {
 				
@@ -128,9 +128,9 @@
 				
 			
 		 //pause the time
-		function pauseTime( e ) {
+		function pauseTime( ) {
 		
- e.preventDefault( );
+ //e.preventDefault( );
 
 			if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) {
 				
@@ -146,9 +146,9 @@
 			
 				
 		//stop the time
-		function stopTime( e ) {
+		function stopTime( ) {
 		
- e.preventDefault( );
+ //e.preventDefault( );
 
 			if ( seconds !== 0 ) {
 			
@@ -220,7 +220,6 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 	
 	<p  id="check"></p>
 
-<p id="log">Log<p/>
 	
 </body>
 </html>
