@@ -195,11 +195,11 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 		
 			// startWatch();
 
-document.getElementById('log').addEventListener('click', function (e) {
-  e.preventDefault();
-e.stopPropagation();
+document.getElementById('log').addEventListener('click', function (event) {
+  event.preventDefault();
+event.stopPropagation();
 alert(577);
-//return false;
+return false;
 });
 		});
 
