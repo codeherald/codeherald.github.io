@@ -194,6 +194,12 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 			document.getElementById("pause").addEventListener('click', pauseTime );
 		
 			// startWatch();
+
+document.getElementById('log').addEventListener('click', function (e) {
+  e.preventDefault();
+e.stopPropagation();
+return false;
+});
 		});
 
 		// ********** stopTime end
@@ -218,6 +224,8 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 	</section>
 	
 	<p  id="check"></p>
+
+<input id="log" type="button" value="login" onsubmit="return false;" />
 	
 </body>
 </html>
