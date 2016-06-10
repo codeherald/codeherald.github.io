@@ -92,6 +92,8 @@
 
 		function startTime( e ) {
 		
+  e.preventDefault( );
+
 			if ( seconds === 0 ) {
 
 			 	var fulltime = document.getElementById( "fulltime" );
@@ -109,7 +111,8 @@
 				
 		 //play the time
 		function playTime( e ) {
-					
+			 e.preventDefault( );
+
 			if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) {
 				
 				clearTimeout( clearTime );
@@ -123,8 +126,10 @@
 				
 			
 		 //pause the time
-		function pauseTime( ) {
+		function pauseTime( e ) {
 		
+ e.preventDefault( );
+
 			if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) {
 				
 				clearTimeout( clearTime );
@@ -139,8 +144,10 @@
 			
 				
 		//stop the time
-		function stopTime( ) {
+		function stopTime( e ) {
 		
+ e.preventDefault( );
+
 			if ( seconds !== 0 ) {
 			
 			 	var fulltime = document.getElementById( "fulltime" );
@@ -183,7 +190,7 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 			
 			document.getElementById("pause").addEventListener('click', pauseTime );
 		
-			 //startWatch();
+			 startWatch();
 		});
 
 		// ********** stopTime end
@@ -209,4 +216,5 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 </body>
 </html>
 
+none
 none
