@@ -91,8 +91,6 @@
 		//start the stop watch
 
 		function startTime( ) {
-		
- // e.preventDefault( );
 
 			if ( seconds === 0 ) {
 
@@ -105,7 +103,7 @@
 				
 				startWatch( );
 
-      // return false;
+     
 			}
 			
 		}	// startTime( ) 
@@ -113,7 +111,6 @@
 				
 		 //play the time
 		function playTime( ) {
-			 //e.preventDefault( );
 
 			if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) {
 				
@@ -129,8 +126,6 @@
 			
 		 //pause the time
 		function pauseTime( ) {
-		
- //e.preventDefault( );
 
 			if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) {
 				
@@ -147,8 +142,6 @@
 				
 		//stop the time
 		function stopTime( ) {
-		
- //e.preventDefault( );
 
 			if ( seconds !== 0 ) {
 			
@@ -172,7 +165,7 @@
 					 document.getElementById("stop").style.display = "inline-block";
 					 document.getElementById("play").style.display = "inline-block";
 
-document.getElementById("pause").addEventListener('click', pauseTime );
+                     document.getElementById("pause").style.display = "inline-block";
 		
 
 				clearTimeout( clearTime );
@@ -184,8 +177,7 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 		
 		window.addEventListener( 'load', function ( ) {
 			
-			/*/document.getElementById("start").addEventListener('mousedown', startTime );
-*/
+			document.getElementById("start").addEventListener('click', startTime );
 			
 			 document.getElementById("stop").addEventListener('click', stopTime );
 			
@@ -193,7 +185,7 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 			
 			document.getElementById("pause").addEventListener('click', pauseTime );
 		
-			// startWatch();
+			startWatch();
 
 		});
 
@@ -207,11 +199,11 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 	<section id="stopWatch">
 		<p id="timer">Time: 00:00:00</p>
 		
-		<button onclick="return false"  type="button"  id="start">Start</button>
+		<button type="button"  id="start">Start</button>
 
 		<button type="button"  id="stop">Stop</button>
 		
- <button type="button"  id="play">Play</button>
+       <button type="button"  id="play">Play</button>
 
 		 <button type="button"  id="pause">Pause</button>
 		
