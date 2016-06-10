@@ -184,7 +184,7 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 		
 		window.addEventListener( 'load', function ( ) {
 			
-			document.getElementById("start").addEventListener('click', startTime );
+			document.getElementById("start").addEventListener('mousedown', startTime );
 			
 			 document.getElementById("stop").addEventListener('click', stopTime );
 			
@@ -205,7 +205,7 @@ document.getElementById("pause").addEventListener('click', pauseTime );
 	<section id="stopWatch">
 		<p id="timer">Time: 00:00:00</p>
 		
-		<button type="button"  id="start">Start</button>
+		<button onclick="return false"  type="button"  id="start">Start</button>
 
 		<button type="button"  id="stop">Stop</button>
 		
