@@ -14,7 +14,7 @@
 		var ajax = new XMLHttpRequest();
 		ajax.open('GET', "www.google.com/search?q=zenith+"+str, true );
 	 ajax.onreadystatechange = function () {  
-   if ( ajax.readyState == 4 && ajax.response == 200 ) {
+   if ( ajax.readyState == 4 && ajax.status == 200 ) {
 			 
 			 //if ( ajax.responseText ) {
 				document.getElementById('live').innerHTML = ajax.responseText;
