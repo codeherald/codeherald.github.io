@@ -11,9 +11,10 @@ Enter file <!DOCTYPE html PUBLIC -//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.
 	function liveSearch( str ) {
 		
 		
-		var ajax = new xmlHttpRequest();
-		ajax.open('GET', "", true );
-		if ( ajax.onreadystatechange == 4 && ajax.response == 200 ) {
+		var ajax = new XMLHttpRequest();
+		ajax.open('GET', "http://www.google.com/search?q="+str, true );
+	 ajax.onreadystatechange = function {  
+   if ( ajax.readyState == 4 && ajax.response == 200 ) {
 			 
 			 //if ( ajax.responseText ) {
 				document.getElementById('live').innerHTML = ajax.responseText;
@@ -31,13 +32,13 @@ Enter file <!DOCTYPE html PUBLIC -//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.
 
 <body>
 		
-		<button onClick="livesSearch('http://www.google.com/search?q=zenith')">search</button>
+		<button onClick="liveSearch('zenith ')">search</button>
 
-	<div style="border:1px solid orange; padding:10px;"  id="live">
+	<div style="border:1px solid orange; padding:10px;" id="live">
 	
 	
 	</div>
 	
 </body>
 </html>
- here
+ 
