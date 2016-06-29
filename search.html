@@ -1,0 +1,43 @@
+Enter file <!DOCTYPE html PUBLIC -//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>
+ <html lang="en">
+ <head>
+	 <title>srarch google</title>
+
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	 
+	 <link rel="stylesheet" href="" type="text/css	 "/ >
+	
+	<script>
+	function liveSearch( str ) {
+		
+		
+		var ajax = new xmlHttpRequest();
+		ajax.open('GET', "", true );
+		if ( ajax.onreadystatechange == 4 && ajax.response == 200 ) {
+			 
+			 //if ( ajax.responseText ) {
+				document.getElementById('live').innerHTML = ajax.responseText;
+				 
+				alert(ajax.responseText);
+			//}
+		
+		}
+		ajax.send();
+	}
+	
+	</script>
+
+</head>	
+
+<body>
+		
+		<button onClick="livesSearch('http://www.google.com/search?q=zenith')">search</button>
+
+	<div style="border:1px solid orange; padding:10px;"  id="live">
+	
+	
+	</div>
+	
+</body>
+</html>
+ here
