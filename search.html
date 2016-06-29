@@ -13,7 +13,7 @@
 		
 		var ajax = new XMLHttpRequest();
 		ajax.open('GET', "www.google.com/search?q=zenith+"+str, true );
-	 ajax.onreadystatechange = function {  
+	 ajax.onreadystatechange = function () {  
    if ( ajax.readyState == 4 && ajax.response == 200 ) {
 			 
 			 //if ( ajax.responseText ) {
