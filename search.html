@@ -8,8 +8,7 @@
 	 <link rel="stylesheet" href="" type="text/css	 "/ >
 	
 	<script>
-var a = document.getElementsByTagName('body');
-alert(a.innerHTML + document.title + a.value );
+
 	function liveSearch() {
 		
 		
@@ -18,17 +17,18 @@ alert(a.innerHTML + document.title + a.value );
 	 ajax.onreadystatechange = function () {  
    if ( ajax.readyState == 4 && ajax.status == 200 ) {
 			 
-			 if ( ajax.responseText ) {
+			 //if ( ajax.responseText ) {
 				document.getElementById('live').innerHTML = ajax.responseText;
 				 
 				alert(ajax.responseText);
-			}
+			//}
 		
 		}
   }
 		ajax.send();
 	}
 	
+liveSearch();
 	</script>
 
 </head>	
