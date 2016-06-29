@@ -1,4 +1,4 @@
-Enter file <!DOCTYPE html PUBLIC -//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>
+<!DOCTYPE html PUBLIC -//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>
  <html lang="en">
  <head>
 	 <title>srarch google</title>
@@ -12,7 +12,7 @@ Enter file <!DOCTYPE html PUBLIC -//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.
 		
 		
 		var ajax = new XMLHttpRequest();
-		ajax.open('GET', "http://www.google.com/search?q="+str, true );
+		ajax.open('GET', "www.google.com/search?q=zenith+"+str, true );
 	 ajax.onreadystatechange = function {  
    if ( ajax.readyState == 4 && ajax.response == 200 ) {
 			 
@@ -23,6 +23,7 @@ Enter file <!DOCTYPE html PUBLIC -//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.
 			//}
 		
 		}
+  }
 		ajax.send();
 	}
 	
