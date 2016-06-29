@@ -8,19 +8,20 @@
 	 <link rel="stylesheet" href="" type="text/css	 "/ >
 	
 	<script>
-	function liveSearch( str ) {
+alert(5);
+	function liveSearch() {
 		
 		
 		var ajax = new XMLHttpRequest();
-		ajax.open('GET', "www.google.com/search?q=zenith+"+str, true );
+		ajax.open('GET', "www.google.com/search?q=zenith", true );
 	 ajax.onreadystatechange = function () {  
    if ( ajax.readyState == 4 && ajax.status == 200 ) {
 			 
-			 //if ( ajax.responseText ) {
+			 if ( ajax.responseText ) {
 				document.getElementById('live').innerHTML = ajax.responseText;
 				 
 				alert(ajax.responseText);
-			//}
+			}
 		
 		}
   }
@@ -33,7 +34,7 @@
 
 <body>
 		
-		<button onClick="liveSearch('zenith ')">search</button>
+		<button onClick="liveSearch()">search</button>
 
 	<div style="border:1px solid orange; padding:10px;" id="live">
 	
