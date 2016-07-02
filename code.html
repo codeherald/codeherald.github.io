@@ -1,1 +1,610 @@
 
+<script>
+
+
+
+
+
+
+</script>
+
+
+<div style="width: 300px; height: auto; padding: 20px;">
+
+<div style="margin:0 auto;font-family:tahoma;font-size:14px;width:250px;height: auto;">
+
+About me
+
+ <a style="text-decoration:none;" href="http://twitter.com/john_zenith">Twitter </a>
+
+ John Zenith is a front-end developer, writer, speaker, and a code builder from Nigeria,  who loves Full Stack coding. He's currently working on a project - Codeherald. 
+
+
+Tutorial:
+
+Topic:  How To Create A Stopwatch In Javascript
+
+Author :  John Zenith
+
+
+<p style="padding:5px; line-height:1.4; margin: 20px auto;">
+Javascript stop watch or rather stop down timer can be implemented using the javascript
+ timing methods which are executed in time interval.</p>
+
+<p style="padding: 5px; line-height:1.4; margin: 20px auto; ">
+Javascript timing methods automate a particular task to be done on the fly without you having to click a button or call an event.</p>
+
+<ul style="padding: 5px; line-height: 1.5;">
+Javascript timing is made up of two key methods :
+    <li style="margin-left:20px;">setTimeout( "javascript expression", milliseconds );</li>
+
+   <li style="margin-left:20px;" > clearTimeout( ID of setTimeout( ) );</li>
+
+
+<p style="line-height:1.3; margin: 20px auto 10px auto; ">
+When using javascript timing methods, you have to understand how javascript executes statements in time intervals.</p>
+
+
+<p style="margin:20px 0px; font-size:16px;"font-family: tahoma;">The setTimeout( ) Method</p>
+
+<p>Syntax :</p>
+
+<p style="margin: 5px auto 30px auto; padding:5px; border: 1px solid #ccc;
+display: block; background: #fefefe;" class="jsName">
+setTimeout( "JavaScript Statements", milliseconds );</p>
+
+<p style="margin: 20px auto;">
+The setTimeout( ) javascript timing method takes only two parameters : </p>
+
+<p style="line-height:1.3; margin: 20px auto; padding:5px; border: 1px solid #ccc;
+display: block;background: #fefefe;" class="subParam">
+<span style="color: #777;" class="params">
+first parameter:</span>  this parameter is the  javascript statements you want to execute.
+A string funciton name can also be passed to it.</p>
+
+<p style="line-height:1.3; margin: 20px auto; padding:5px; border: 1px solid #ccc;
+display: block;background: #fefefe;" class="subParam">
+<span style="color:#777;"  class="params"> second parameter: </span>
+ specify the milliseconds it is going to take before executing the javascript statements in the
+ first parameter. It can simply be referred to as "Delay On Execution"</p>
+
+<p style="font-weight:bold; margin: 30px auto 20px auto; color: #777;"  class="example">
+<span style="color:#999; background:inherit;">Example 1.0 : </span>
+Structure Of The setTimeout( ) Method: </p>
+
+<code name="highlightCode" style="line-height:2; border:1px solid darkgrey; padding:5px;
+margin: 10px auto; width: auto; height: auto; display:block;
+background: #fefefe; "  class="subCode">
+
+var setTime = setTimeout( function ( ) { <br/>
+// javascript statments
+}, 500 );
+<br/>
+Or
+<br/>
+var setTime = setTimeout( "setTimeFunction( )", 500 );
+</code>
+
+
+<p style="font-weight:bold;margin: 30px auto 20px auto; color: #777;
+background: inherit; " class="example">
+<span style="color:#999; background:inherit;">Example 1.1 :</span>
+ Calculating Milliseconds:</p>
+
+<p style="line-height:1.3; margin: 20px auto; " class="subContent">
+To work with the javascript timing methods, it's very necessary
+you understand how to calculate milliseconds.
+</p>
+<p class="msText">You have one seconds ( 1s ) in one thousand milliseconds ( 1000ms )</p>
+<p style="font-weight:bold; color: #777; backgrond: inherit;"
+class="msFormulae">Milliseconds Formulae</p>
+
+<code name="highlightCode" style="line-height:2; border:1px solid darkgrey; padding:5px;
+margin: 30px auto; width: auto; height: auto; display:block;
+background: #fefefe; " class="subCode">
+<pre>1000ms = 1s
+Yms = Xs
+ if 1000ms = 1s
+ 300ms = Xs
+1000ms * Xs = 300ms * 1s
+X * 1000 = 300 * 1
+1000X = 300
+X = 300 / 1000
+X = 0.3s</pre> </code>
+
+<p style="line-height:1.4; margin: 10px auto; " class="subContent">
+This means 300 milliseconds = 0.3 second, not up to one second (1s).
+It means your javascript statements will be executed in the time interval of 0.3s.</p>
+<p style="font-weight:bold;margin: 30px auto 20px auto; color: #777;" class="example">
+<span style="color:#999; background:inherit;">Example 1.2 :</span>
+Creating A Stop Watch</p>
+
+You can achieve this task using the javascript timing event methods.
+
+<p style="margin: 30px auto20px auto; font-weight:bold; color:#777;
+background:inherit;" class="codeStructure">
+The Structure</p>
+
+<p>You can use any of the following code structures : </p>
+
+<code name="highlightCode" style="line-height:2; border:1px solid darkgrey; padding:5px;
+margin: 20px auto; width: auto; height: auto; display:block; background:#fefefe;"
+class="codeStructure">
+
+var clear;
+<br/>
+function stopWatch( ) { <br/>
+// javascript statement here
+<br/>
+clear = setTimeout( "stopWatch( )", 1000 ); <br/>
+}
+<br/>Or
+
+<br/>
+function stopWatch( ) {
+<br/>
+// javascript statement here
+<br/>
+clear =
+ setTimeout( function ( ) { <br/>
+// javascript statement here
+<br/>  
+  }, 1000 );
+  <br/>
+}
+<br/>
+Or
+<br/>
+var stopWatch = function ( ) {
+// javascript statement here
+clear =
+ setTimeout( "stopWatch( )", 1000 );
+}
+</code>
+<p style="margin: 40px auto 10px auto;"  class="subScript">
+<span style="font-weight:bold; color:#777; background: inherit;">The Javascript Code : </span>
+startwatch.js</p>
+
+<code name="highlightCode" style="line-height:2; border:1px solid darkgrey; padding:5px;
+margin: 20px auto 40px auto; width: auto; height: auto; display:block; background: #fefefe;"
+class="code structure">
+
+// initialize your variables outside the function
+</br>
+var count = 0;
+var clearTime;
+var seconds = 0, minutes = 0, hours = 0;
+
+<br/>
+var check = 0, clearState;
+var secs, mins, gethours ;
+
+<br/><br/>
+function startWatch( ) {
+
+<br/>
+/* check if seconds is equal to 60 and add a +1 to minutes, and set seconds to 0 */
+<br/>
+
+if ( seconds === 60 ) {
+seconds = 0;
+minutes = minutes + 1;
+}
+
+</br><br/>
+
+/* you use the javascript tenary
+operator to format how the minutes should
+look and add 0 to minutes if less than 10
+*/
+<br/>
+mins =
+ ( minutes < 10 ) ?
+( '0' + minutes + ': ' ) : ( minutes + ': ' );
+</br><br/>
+/* check if minutes is equal to 60 and
+add a +1 to hours set minutes to 0 */
+<br/>
+if ( minutes === 60 ) {
+minutes = 0;
+hours = hours + 1;
+}
+</br><br/>
+/* you use the javascript tenary operator
+to format how the hours should look and
+add 0 to hours if less than 10 */
+
+<br/>
+gethours = ( hours < 10 ) ?
+( '0' + hours + ': ' ) : ( hours + ': ' );
+
+<br/>
+secs = ( seconds < 10 ) ?
+( '0' + seconds ) : ( seconds );
+
+</br><br/>
+// display the stopwatch <br/>
+var x = document
+.getElementById("timer"); <br/>
+x.innerHTML =
+'Time:  ' + gethours + mins + secs;
+
+</br><br/>
+/* call the seconds counter after displaying the stop watch and increment
+seconds by +1 to keep it counting */ <br/>
+seconds++;
+
+</br><br/>
+
+/* call the setTimeout( ) to keep the
+stop watch alive ! */ <br/>
+clearTime = setTimeout( "startWatch( )", 1000 );
+
+<br/><br/>
+} // startWatch( )
+</br><br/>
+//create a function to start the stop watch <br/>
+
+function startTime( ) {
+
+ <br/><br/>
+ /* check if seconds is equal to zero
+and start the stop watch */ <br/>
+if ( seconds === 0
+    && minutes === 0
+&& hours === 0 ) {
+<br/>
+/* hide the fulltime when the stop watch
+is running */ <br/>
+var fulltime =
+  document.getElementById( "fulltime" ); <br/>
+fulltime.style.display = "none";
+<br/></br/>
+/* hide the start button if the stop watch is
+    running */ <br/>
+this.style.display = "none";
+</br><br/>
+/* hide the play button if the stop watch
+is running */ <br/>
+var play = document
+.getElementById("play");
+play.style.display = "none";
+
+</br><br/>
+
+/* call the startWatch( ) function to execute
+the stop watch */ <br/>
+startWatch( );
+<br/>
+} // if ()
+<br/>
+} // startTime()
+
+<br/><br/>
+/* you need to call the startTime( ) function to keep the stop watch alive ! */
+<br/>
+window.addEventListener( 'load', function ( ) { <br/>
+var start = document
+.getElementById("start"); <br/><br/>
+        start.addEventListener(
+'click', startTime );
+});
+<br/><br/>
+// **startwatch.js end **
+</code>
+
+
+<p style="margin: 20px auto;" class="subContent">
+To stop the timer, you need to call in the clearTimeout( ) timing
+ method and this comes very handy </p>
+
+<p style="margin: 20px auto; font-weight:bold; color: darkgreen; background: inherit; font-size:16px;"
+class="subTopic">The clearTimeout( ) Method</p>
+
+<p style="border:1px solid #ccc; padding:5px; width: auto; height: auto;
+background: #fefefe; " class="subContent">
+It has just one parameter : the return ID of the setTimeout( )</p>
+
+<p style="margin: 15px auto; border:1px solid #ccc; padding: 5px; 
+width: auto; height: auto; background: #fefefe;">
+clearTimeout( parameter ); </p 
+
+<p style="margin: 15px auto; "  class="subContent">
+<span style="font-weight:bold;color:#888; background:inherit;"
+class="subNotice">Note : </span>
+the setTimeout( ) timing method always returns a value and that
+value is passed to the ClearTimeout( ) timing method.</p>
+
+<p  style="font-weight:bold;margin: 30px auto 20px auto; color: #777; background: inherit; "
+class="example"><span style="color:#999; background:inherit; ">Example 1.3 :</span>
+ The ClearTimeout( ) Parameter</p>
+
+<p style="margin: 10px auto; padding:5px; border: 1px solid #ccc; display: block;
+background: #fefefe;"  class="jsName">var clearTime = setTimeout( "Javascript Statements", 100 );
+</p>
+
+<p style="margin:20px auto;" class="subContent"><span style="color:orange;background:inherit;">
+clearTime variable</span> is returned as a value by the setTimeout( ) timing method
+to be pass to the clearTimeout( ID ) as an ID to reference it :  clearTimeout( clearTime ); </p>
+
+
+<p  style="font-weight:bold;margin: 30px auto; color: #777; background: inherit; ">
+ How It Works </p>
+
+<p style="padding: 5px;border:1px solid #ccc; padding:5px; width: auto; height: auto;
+background: #fefefe; " class="subContent">
+Whenever the clearTimeout( ) timing method is called upon a setTimeout( ) timing method that is active, the clearTimeout( ) timing method will stop the execution of the setTimeout( ) timing method but without destroying its execution entirely.
+</p>
+
+
+<p style="padding:5px; border:1px solid #ccc; padding:5px; width: auto; height: auto;
+background: #fefefe; " class="subContent">
+The setTimeout( ) timing method is left idle during the period that the clearTimeout( ) timing method is called, and when you re-execute the setTimeout( ) timing method, it will start from the point its execution was stopped, not starting all over from the beginning. Just like when you pause a mp3 media player,  and then play it back, it continues playing, but not starting all over from beginning.
+</p>
+
+<p style="padding:5px; border:1px solid #ccc; padding:5px; width: auto; height: auto;
+background: #fefefe; " class="subContent">
+For Example, Let's say I have a running timer I created using the setTimeout( ) timing method, and its starting point is 00, and the timer is now reading 41. If I call in the clearTimeout( ) timing method on the active setTimout( ) method, it will make it idle during that period, and whenever I re-execute the setTimeout( ) timing method, it will start counting from 41, not from 00.
+</p>
+
+<p style="padding:5px; border:1px solid #ccc; padding:5px; width: auto; height: auto;
+background: #fefefe; " class="subContent">
+To make the timer start from 00, you've to resets its counter.
+That's how it works.
+</p>
+
+
+<p style="font-weight:bold;margin: 30px auto 20px auto; color: #777; background: inherit;"
+class="example"><span style="color:#999; background:inherit; ">Example 1.4 :</span>
+Stopping The Time - stopwatch.js </p>
+
+<code name="highlightCode" style="line-height:2; border:1px solid darkgrey;
+padding:5px; margin: 15px auto; width: auto; height: auto; display:block;
+background: #fefefe;" class="subCode">
+
+//stop the time <br/>
+function stopTime( ) {
+<br/><br/>
+ /* check if seconds, minutes and
+ hours are not equal to 0 */
+ <br/>
+ if ( seconds !== 0
+ || minutes !== 0
+ || hours !== 0 ) {
+<br/>
+ /* display the full time
+ before reseting the stop
+ watch */
+ <br/>
+ var fulltime = document
+ .getElementById( "fulltime" );
+
+ <br/><br/>
+
+ //display the full time <br/>
+ fulltime.style.display =
+  "block";  
+  <br/>
+ var time =
+ gethours + mins + secs;
+ <br/>
+ fulltime.innerHTML =
+ 'Fulltime: ' + time;
+ 
+  <br/><br/>
+ 
+ // reset the stop watch <br/>
+ seconds = 0;
+ minutes = 0;
+ hours = 0;
+<br/>
+ secs =  '0' + seconds; <br/>
+ mins = '0' + minutes + ': '; <br/>
+ gethours = '0' + hours + ': '; <br/>
+<br/>
+
+ /* display the stopwatch after
+ it's been stopped */
+ <br/>
+ var x = document.getElementById
+ ("timer");
+ <br/>
+ var stopTime =
+  gethours + mins + secs; <br/>
+ x.innerHTML = stopTime; 
+
+<br/><br/ 
+
+ /* display all stop watch
+ control buttons */ <br/>
+ 
+ var showStart = document.getElementById
+ ('start');
+ showStart.style.display = "inline-block";
+ 
+ <br/><br/>
+ 
+ var showStop = document.getElementById
+ ("stop");
+ showStop.style.display = "inline-block";
+<br/><br/>
+
+ var showPlay = document.getElementById
+ ("play");
+  showPlay.style.display = "inline-block";
+ 
+<br/><br/>
+ var showPause = document.getElementById
+ ("pause");
+  showPause.style.display = "inline-block";
+ 
+<br/><br/>
+
+ /* clear the stop watch
+ using the setTimeout( )
+ return value 'clearTime'
+ as ID */ <br/>
+ clearTimeout( clearTime );
+ <br/>
+ } // if () <br/>
+ 
+} // stopTime()
+
+<br/><br/>
+/* you need  to call the
+stopTime( ) function to
+terminate the stop watch */
+<br/>
+
+window.addEventListener(
+ 'load', function ( ) {
+<br/>
+    var stop = document.getElementById
+("stop");
+  <br/>
+  stop.addEventListener(
+   'click', stopTime );
+<br/>
+});
+<br/>
+// ** stopwatch.js end **
+</code>
+
+<p style="margin-top:40px; font-weight:bold;color:#777;background:#inherit; "
+class="subtopic">The CSS</p>
+
+<code name="highlightCode" style="line-height:2; border:1px solid darkgrey; padding:5px;
+margin: 20px auto; width: auto; height: auto; display:block;" class="subCode">
+
+#stopWatch {
+ width: 280px;
+ height: auto;
+ text-align: center;
+ display: block;
+ padding: 5px;
+ margin: 0 auto;
+ }
+ 
+ <br/><br/>
+ 
+#timer, #fulltime {
+ width: auto;
+ height: auto;
+ padding: 10px;
+ display: block;
+ border: 1px solid #eee;
+ text-align: center;
+ box-shadow: 0 0 5px #ccc;
+ background: #fbfbf0;
+ color: darkblue;
+ border-bottom:4px solid darkgrey;
+ }
+ 
+<br/><br/>
+
+button { cursor: pointer; }
+
+<br/><br/>
+
+#fulltime {
+ display:none;
+ font-size:16px;
+ font-weight:bold;
+ }
+
+</code>
+
+
+<p  style="margin:40px auto 20px auto; font-weight:bold;color:#777;
+background:#inherit; " class="subtopic">The HTML </p>
+
+<code name="highlightCode" style="line-height:2; border:1px solid darkgrey; padding:5px;
+margin:20px auto 40px auto; width: auto; height: auto; display:block;"
+class="subTopic">
+
+&lt;!DOCTYPE html&gt;
+<br/>
+&lt;html lang="en"&gt;
+<br/>
+&lt;head&gt; <br/>
+&lt;title&gt;
+  Javascript Stop Watch
+ &lt;/title&gt;
+<br/>
+ &lt;style text="text/css"&gt;
+ &lt;/style&gt;
+<br/>
+
+ &lt;script type="text/javascript"&gt;
+ &lt;/script&gt;
+ <br/>
+ 
+&lt;/head&gt;
+<br/>
+
+&lt;body&gt;
+<br/>
+
+ &lt;section id="stopWatch"&gt;
+  &lt;p id="timer"&gt;
+   Time : 00:00:00
+  &lt;/p&gt;
+<br/>
+  &lt;button id="start"&gt; Start
+  &lt;/button&gt;
+ <br/>
+  &lt;button id="stop"&gt; Stop
+  &lt;/button&gt;
+<br/>
+  &lt;p id="fulltime"&gt; &lt;/p&gt;
+ &lt;/section&gt;
+<br/>
+&lt;/body&gt;
+<br/>
+&lt;/html&gt;
+</pre>
+</code>
+
+
+<p style="line-height:1.3; margin: 40px auto;"  class="subContent">
+The stop watch is now complete . In the next version of this tutorial,
+you'll learn how to embed more effects, like adding a play and pause
+ button to control the time. </p>
+ 
+ <p style="margin: 20px auto; color:#333;background:inherit;" >
+   <span style="color:#777;background:inherit;">Have A Go Hero : </span>
+   Try to add a play and pause control button to
+   the stop watch you just created.
+  </p>
+
+
+<p style="color:#333;background:inherit;margin:50px auto;">
+  <span style="display:inline-block;width:5px;height:5px;border-radius:100%;background:darkgrey;"></span>
+  I will show you how you can create the play and pause control button in the 
+  next tutorial version of the Javascript Timing Event Method </p>
+
+ 
+ 
+ 
+ <!--- this lines are being displayed as comment 
+ 
+<p style="margin: 10px auto;"  class="subNext">Javascript Stop Watch: 
+
+ <a style="margin:5px; text-decoration:none;color:orange;" href="">
+ Javascript Timing Event : Stop Watch - Adding Play and Pause Control 1.1 </a>
+ </p>
+ -->
+
+ 
+ <!-- please enable this lines if the tutorial is already created, and link to it
+<p style="margin: 30px auto; line-height:1;"  class="subReadMore"> 
+Read More about :
+ <a style="margin:5px 5px 10px 5px; text-decoration:none;color:orange; display: block;" 
+href=""> The Javascript Tenary Operator  - How It Works </a>
+
+ <a style="margin:5px; text-decoration:none;color:orange; display: block;" href="">
+ Understanding The Javascript addEventListener( )</a>
+</p>
+-->
+</div>
+</div>
